@@ -8,21 +8,59 @@ var artists = ["SUPER JUNIOR", "Red Relvet", "BTS", "BTS", "JENNIE"];
 var songLengths = ["3:21", "3:30","4:20", "4:00", "2:49"];
 var imageUrl = ["https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/06/b4/5a/06b45ab8-9f50-0074-5b35-d60cb07670ef/SJ_REPLAY_Digital_Cover.jpg/268x0w.jpg", "https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Red_Velvet_The_Perfect_Red_Velvet_Cover.jpg/220px-Red_Velvet_The_Perfect_Red_Velvet_Cover.jpg", "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/BTS%2C_Love_Yourself_Answer%2C_album_cover.jpg/220px-BTS%2C_Love_Yourself_Answer%2C_album_cover.jpg", "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/BTS%2C_Love_Yourself_Answer%2C_album_cover.jpg/220px-BTS%2C_Love_Yourself_Answer%2C_album_cover.jpg","https://pre00.deviantart.net/f74f/th/pre/f/2018/316/5/5/jennie__blackpink____solo_by_akari_airi_12-dcru5jx.jpg"];
 var linkAddress = ["https://open.spotify.com/track/4AalpFiUPkAGdHAmVSXBxh","https://youtu.be/J_CFBjAyPWE", "https://youtu.be/K1scjjbfNsk", "https://open.spotify.com/track/0EQMrxdeiBhry9JCxskko3", "https://youtu.be/b73BI9eUkjM"];
-
+ function displaySongInfo(){
     // BELOW Use forEach Loop to display the data from each of your array's in the correct div
-
+    imageUrl.forEach(function(string){
+        	$("#images").append("<img src=" + string + ">");
+        
+            
+    });
+    songs.forEach(function(string){
+        	$("#songs").append("<p>" + string + "</p>");
+        
+            
+    });
+    artists.forEach(function(string){
+        	$("#artists").append("<p>" + string + "</p>");
+        
+            
+    });
+    songLengths.forEach(function(string){
+        	$("#lengths").append("<p>" + string + "</p>");
+        
+            
+    });
+    linkAddress.forEach(function(string){
+        	$("#links").append("<a href=" + string + "> Listen </a>");
+        
+            
+    });
 }
 
 function emptySongInfo(){
     $("#songs").empty();
     // Use jQuery to empty all of the remaining divs
-
+    $("#images").empty();
+    $("#artists").empty();
+    $("#lengths").empty();
+    $("#links").empty();
 
 }
 
 
 function addSongInfo(){
     // BELOW write the code to add new items to each of the arrays.
+ var songInput= $('#song').val();
+var artistInput= $("#artist").val();
+var lengthInput= $("#length").val();
+var imageInput= $("#image").val();
+var linkInput= $("#link").val();
+ 
+ songs.push(songInput);
+ artists.push(artistInput);  
+ songLengths.push(lengthInput);
+ imageUrl.push(imageInput);
+ linkAddress.push(linkInput);
 
 
 }
